@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:latest
+     volumes:
+       - ~/container_data/mysql:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: admin
+       MYSQL_DATABASE: testdb
+       MYSQL_USER: admin
+       MYSQL_PASSWORD: admin

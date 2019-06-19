@@ -1,0 +1,76 @@
+{
+  "rabbit_version":"3.7.2",
+  "users":[
+    {
+      "name":"guest",
+      "password_hash":"GMxWow/zNL14C8pNf+ZRIAWQTW72yeFTTYep4hN79CNMli/u",
+      "hashing_algorithm":"rabbit_password_hashing_sha256",
+      "tags":"administrator"
+    }
+  ],
+  "vhosts":[
+    {
+      "name":"/"
+    }
+  ],
+  "permissions":[
+    {
+      "user":"guest",
+      "vhost":"/",
+      "configure":".*",
+      "write":".*",
+      "read":".*"
+    }
+  ],
+  "topic_permissions":[
+
+  ],
+  "parameters":[
+
+  ],
+  "global_parameters":[
+    {
+      "name":"cluster_name",
+      "value":"rabbit@7ec6d78ec964"
+    }
+  ],
+  "policies":[
+
+  ],
+  "queues":[
+    {
+      "name":"enterprise_logger",
+      "vhost":"/",
+      "durable":true,
+      "auto_delete":false,
+      "arguments":{
+
+      }
+    }
+  ],
+  "exchanges":[
+    {
+      "name":"enterprise_logger",
+      "vhost":"/",
+      "type":"topic",
+      "durable":true,
+      "auto_delete":false,
+      "internal":false,
+      "arguments":{
+
+      }
+    }
+  ],
+  "bindings":[
+    {
+      "source":"enterprise_logger",
+      "vhost":"/",
+      "destination":"enterprise_logger",
+      "destination_type":"queue",
+      "routing_key":"",
+      "arguments":{
+
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+postgres:
+  image: postgres:latest
+  ports:
+    - 5432:5432
+  environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: contacts
+      PGDATA: /data/postgres
+  volumes:
+    #- ~/container_data/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    - ~/container_data/postgres:/data/postgres

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  rabbitmq:
+    build: .
+    hostname: "rabbitmq"
+    environment:
+      #RABBITMQ_DEFAULT_USER: "admin" Defined in custom definitions: value is guest
+      #RABBITMQ_DEFAULT_PASS: "admin" Defined in custom definitions: value is guest
+      RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - 15672:15672
+      - 5672:5672
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - "~/container_data/rabbitmq/:/var/lib/rabbitmq"

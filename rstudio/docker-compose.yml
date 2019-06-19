@@ -1,0 +1,13 @@
+rstudio:
+  image: "rocker/rstudio"
+  hostname: "rstudio"
+  environment:
+    USER: "rstudio"
+    PASSWORD: "rstudio"
+    ROOT: "TRUE"
+  ports:
+    - "8787:8787"
+  labels:
+    NAME: "rstudio"
+  volumes:
+    - "~/container_data/rstudio/:/home/rstudio"
