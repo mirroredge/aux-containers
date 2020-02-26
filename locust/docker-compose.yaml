@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  locust:
+    image: locustio/locust:latest
+    deploy:
+      replicas: 1
+    environment: 
+      LOCUST_MODE: standalone
+      TARGET_URL: http://locust-master:8089
+      LOCUSTFILE_PATH: /tests/locustfile.py
+      LOCUST_OPTS: ''
+    volumes:
+      - '~/container_data/locust:/tests'
+    ports:
+      - 8089:8089
+  nginx:
+    image: nginx
+    ports:
+      - "8080:80"
